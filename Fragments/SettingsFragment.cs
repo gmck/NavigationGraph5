@@ -14,16 +14,21 @@ namespace com.companyname.NavigationGraph5.Fragments
         private ColorThemeListPreference colorThemeListPreference;
         private SystemThemeListPreference systemThemeListPreference;
 
+        #region OnCreate
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             HasOptionsMenu = true;
         }
+        #endregion
+
+        #region OnCreateOptionsMenu
         public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
         {
             base.OnCreateOptionsMenu(menu, inflater);
             menu.Clear();
         }
+        #endregion
 
         #region OnCreatePreferences
         public override void OnCreatePreferences(Bundle savedInstanceState, string rootKey)
@@ -32,14 +37,6 @@ namespace com.companyname.NavigationGraph5.Fragments
 
             SetPreferencesFromResource(Resource.Xml.preferences, rootKey);
             
-            if (PreferenceScreen.FindPreference("darkTheme") is CheckBoxPreference checkboxDarkThemePreference)
-            {
-                if (Build.VERSION.SdkInt < BuildVersionCodes.Q)
-                    checkboxDarkThemePreference.PreferenceChange += CheckboxDarkThemePreference_PreferenceChange;
-                else
-                    checkboxDarkThemePreference.Enabled = false;
-            }
-
             if (PreferenceScreen.FindPreference("colorThemeValue") is ColorThemeListPreference colorThemeListPreference)
             {
                 colorThemeListPreference.Init();
@@ -55,6 +52,14 @@ namespace com.companyname.NavigationGraph5.Fragments
                 }
                 else
                     systemThemeListPreference.Enabled = false;
+            }
+
+            if (PreferenceScreen.FindPreference("darkTheme") is CheckBoxPreference checkboxDarkThemePreference)
+            {
+                if (Build.VERSION.SdkInt < BuildVersionCodes.Q)
+                    checkboxDarkThemePreference.PreferenceChange += CheckboxDarkThemePreference_PreferenceChange;
+                else
+                    checkboxDarkThemePreference.Enabled = false;
             }
         }
         #endregion
@@ -120,8 +125,10 @@ namespace com.companyname.NavigationGraph5.Fragments
             // screen can be displayed accordingly.
             // You don't need to do this if your app doesn't provide in-app dark mode setting. e.g. System Default, Light, Dark.
             // UiModeService
+            // You could call overriding the Quick Settings Day/Night Theme button. 
+            // In other words the user can select to override whatever the theme button is set to when on an Android 12+ device.
 
-            UiModeManager uiModeManager = Application.Context.GetSystemService(Context.UiModeService) as UiModeManager;
+            UiModeManager uiModeManager = Activity.GetSystemService(Context.UiModeService) as UiModeManager;
             if (Build.VERSION.SdkInt >= BuildVersionCodes.S)
                 uiModeManager?.SetApplicationNightMode((int)uiNightMode);  // Only avaialable in Android 12 and above.
 

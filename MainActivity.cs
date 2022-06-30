@@ -36,9 +36,7 @@ namespace com.companyname.NavigationGraph5
         #region OnCreate
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            
             AndroidX.Core.SplashScreen.SplashScreen.InstallSplashScreen(this);
-
 
             base.OnCreate(savedInstanceState);
 
@@ -56,7 +54,6 @@ namespace com.companyname.NavigationGraph5
             toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
             ViewCompat.SetOnApplyWindowInsetsListener(toolbar, this);
-
 
             // navigationView, bottomNavigationView for NavigationUI and drawerLayout for the AppBarConfiguration and NavigationUI
             navigationView = FindViewById<NavigationView>(Resource.Id.nav_view);

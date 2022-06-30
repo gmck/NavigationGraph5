@@ -8,14 +8,15 @@
 		app:iconSpaceReserved="false"
 		android:key="general"
 		android:title ="@string/generalCategoryTitle">
-
-		<androidx.preference.CheckBoxPreference
+		
+		<com.companyname.NavigationGraph5.ColorThemeListPreference
 			app:iconSpaceReserved="false"
-			android:defaultValue="false"
-			android:key="darkTheme"
-			android:summary="@string/use_dark_theme_summary"
-			android:title="@string/use_dark_theme" />
-
+			android:key="colorThemeValue"
+			android:defaultValue="1"
+			android:title ="@string/colorThemeListPreferenceTitle"
+			android:dialogTitle ="@string/colorThemeListPreferenceDialogTitle"
+			android:summary ="@string/colorThemeListPreferenceSummary"/>
+		
 		<com.companyname.NavigationGraph5.SystemThemeListPreference
 			app:iconSpaceReserved="false"
 			android:key="systemThemeValue"
@@ -24,13 +25,12 @@
 			android:dialogTitle ="@string/systemThemeListPreferenceDialogTitle"
 			android:summary ="@string/systemThemeListPreferenceSummary"/>
 
-		<com.companyname.NavigationGraph5.ColorThemeListPreference
+		<androidx.preference.CheckBoxPreference
 			app:iconSpaceReserved="false"
-			android:key="colorThemeValue"
-			android:defaultValue="1"
-			android:title ="@string/colorThemeListPreferenceTitle"
-			android:dialogTitle ="@string/colorThemeListPreferenceDialogTitle"
-			android:summary ="@string/colorThemeListPreferenceSummary"/>
+			android:defaultValue="false"
+			android:key="darkTheme"
+			android:summary="@string/use_dark_theme_summary"
+			android:title="@string/use_dark_theme" />
 
 		<androidx.preference.CheckBoxPreference
 			app:iconSpaceReserved="false"

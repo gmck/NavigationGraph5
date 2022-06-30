@@ -27,7 +27,12 @@
 
 	<string name ="systemThemeListPreferenceTitle">Choose System Theme - Android 12 and above</string>
 	<string name ="systemThemeListPreferenceDialogTitle">Select which system theme to use</string>
-	<string name ="systemThemeListPreferenceSummary">For Android 10,11 use the Quick Settings Theme button. Please see our help manual for a full discussion of this feature.</string>
+	<string name ="systemThemeListPreferenceSummary">For Android 10,11 use the Quick Settings Dark Theme button. Please see our help manual for a full discussion of this feature.</string>
+
+	<!--<string name ="systemThemeListPreferenceTitle">Choose System Theme - Android 10 and above</string>
+	<string name ="systemThemeListPreferenceDialogTitle">Select which system theme to use</string>
+	<string name ="systemThemeListPreferenceSummary">Select system theme</string>-->
+	
 	
 	<string name="use_animations">Use Screen animations</string>
 	<string name="use_animations_summary">Animate the transition from one screen to another of all the screens associated with the side menu</string>

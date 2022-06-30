@@ -16,9 +16,7 @@ namespace com.companyname.NavigationGraph5
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
             sharedPreferences = PreferenceManager.GetDefaultSharedPreferences(this);
-
             // colorThemeValue defaults to RedBmw
             requestedColorTheme = sharedPreferences.GetString("colorThemeValue", "1");
             SetAppTheme(requestedColorTheme);
