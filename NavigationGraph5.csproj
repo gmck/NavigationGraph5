@@ -66,14 +66,19 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\HolderFragmentViewPagerStateAdapter.cs" />
     <Compile Include="AnimationResource.cs" />
     <Compile Include="BaseActivity.cs" />
     <Compile Include="ColorThemeListPreference.cs" />
     <Compile Include="Dialogs\BasicDialogFragment.cs" />
     <Compile Include="Fragments\GalleryFragment.cs" />
+    <Compile Include="Fragments\HoldingFragment.cs" />
     <Compile Include="Fragments\HomeFragment.cs" />
     <Compile Include="Fragments\LeaderboardFragment.cs" />
     <Compile Include="Fragments\RegisterFragment.cs" />
+    <Compile Include="Fragments\SampleFragment1.cs" />
+    <Compile Include="Fragments\SampleFragment2.cs" />
+    <Compile Include="Fragments\SampleFragment3.cs" />
     <Compile Include="Fragments\SettingsFragment.cs" />
     <Compile Include="Fragments\SlideshowFragment.cs" />
     <Compile Include="MainActivity.cs" />
@@ -255,7 +260,9 @@
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxhdpi\ic_launcher_round.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_holder_viewpager.xml" />
+  </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_launcher.png" />
   </ItemGroup>
@@ -267,6 +274,24 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\ic_launcher_background.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_sample1.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_sample2.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_sample3.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\default_dot.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\selected_dot.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\tab_selector.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

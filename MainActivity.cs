@@ -192,7 +192,8 @@ namespace com.companyname.NavigationGraph5
 
             switch (e.Item.ItemId)
             {
-                case Resource.Id.leaderboard_fragment:
+                //case Resource.Id.leaderboard_fragment:
+                case Resource.Id.holding_fragment:
                 case Resource.Id.register_fragment:
                     proceed = true;
                     break;
@@ -245,7 +246,8 @@ namespace com.companyname.NavigationGraph5
                 // These two are not top level fragments, these fragments are opened via the BottomNavigationView, not the NavigationView yet they still come through here. 
                 // You need to observe how the event handler works e.g. NavigationBarView.IOnItemSelectedListener.OnNavigationItemSelected(IMenuItem item) which leads back to here.
                 // Note that BottomNavigationView inherits from NavigationBarView which is an abstract class.
-                case Resource.Id.leaderboard_fragment:
+                //case Resource.Id.leaderboard_fragment: 
+                case Resource.Id.holding_fragment:
                 case Resource.Id.register_fragment:
 
                     proceed = true;
@@ -259,7 +261,8 @@ namespace com.companyname.NavigationGraph5
             if (proceed)
             {
                 // I don't want to animate these two.
-                if (menuItem.ItemId == Resource.Id.leaderboard_fragment || menuItem.ItemId == Resource.Id.register_fragment)
+                //if (menuItem.ItemId == Resource.Id.leaderboard_fragment || menuItem.ItemId == Resource.Id.register_fragment)
+                if (menuItem.ItemId == Resource.Id.holding_fragment || menuItem.ItemId == Resource.Id.register_fragment)
                     navController.Navigate(menuItem.ItemId, null, navOptions); // uncomment if you want to try it or just get rid of the if else
                 else
                     navController.Navigate(menuItem.ItemId, null, navOptions);
@@ -299,7 +302,8 @@ namespace com.companyname.NavigationGraph5
 
             // By default because the LeaderboardFragment and the RegisterFragment are not top level fragments, they will default to showing a up button (left arrow) plus the title.
             // If you don't want the up button, remove it here. This also means that the additional code in OnSupportNavigationUp can be removed. 
-            if (navDestination.Id == Resource.Id.leaderboard_fragment || navDestination.Id == Resource.Id.register_fragment)
+            //if (navDestination.Id == Resource.Id.leaderboard_fragment || navDestination.Id == Resource.Id.register_fragment)
+            if (navDestination.Id == Resource.Id.holding_fragment || navDestination.Id == Resource.Id.register_fragment)
             {
                 toolbar.Title = navDestination.Label;
                 toolbar.NavigationIcon = null;

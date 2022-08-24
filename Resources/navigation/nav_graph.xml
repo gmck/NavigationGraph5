@@ -30,12 +30,18 @@
 		android:label="Settings"/>
 
 	<!--not a top destination - just to test to see if it can be opened twice Navigation.UI 2.4.1 included a new material 1.5.0 which prevented these being opened more than one time, without closing the SlideshowFragment -->
-	<fragment
+	<!--<fragment
 		android:id="@+id/leaderboard_fragment"
 		android:name="com.companyname.navigationgraph5.fragments.LeaderboardFragment"
 		android:label="Leader Board"
-        tools:layout="@layout/fragment_leaderboard"/>
+        tools:layout="@layout/fragment_leaderboard"/>-->
 
+	<fragment
+		android:id="@+id/holding_fragment"
+		android:name="com.companyname.navigationgraph5.fragments.HoldingFragment"
+		android:label="This is the Holding Fragment"
+        tools:layout="@layout/fragment_holder_viewpager"/>
+	
 	<!--not a top destination - just to test to see if it can be opened twice Navigation.UI 2.4.1 included a new material 1.5.0 which prevented these being opened more than one time, without closing the SlideshowFragment  -->
 	<fragment
 		android:id="@+id/register_fragment"
